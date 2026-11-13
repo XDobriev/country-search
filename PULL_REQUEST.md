@@ -3,7 +3,7 @@
 ## 🔗 Ссылки
 
 - **Задание**: [RS School — Country Search](https://github.com/rolling-scopes-school/tasks/blob/master/fullstack-engineering/tasks/country-search/README.md)
-- **Деплой**: [https://khamzadobriev.github.io/country-search/](https://khamzadobriev.github.io/country-search/) _(после слияния/деплоя ветки в GitHub Pages)_
+- **Деплой**: [https://xdobriev.github.io/country-search/](https://xdobriev.github.io/country-search/) _(после слияния/деплоя ветки в GitHub Pages)_
 - **Архитектурная документация**: [DESIGN.md](./DESIGN.md)
 
 ---

@@ -99,9 +99,12 @@ export class SearchCoordinator {
       return;
     }
 
+    const isError = this.state.status === 'ERROR';
     this.state = {
       ...this.state,
       query,
+      error: isError ? null : this.state.error,
+      status: isError ? 'IDLE' : this.state.status,
     };
     this.notify();
 
@@ -126,9 +129,12 @@ export class SearchCoordinator {
       this.activeController = null;
     }
 
+    const isError = this.state.status === 'ERROR';
     this.state = {
       ...this.state,
       query,
+      error: isError ? null : this.state.error,
+      status: isError ? 'IDLE' : this.state.status,
     };
     this.notify();
 
@@ -225,6 +231,24 @@ export class SearchCoordinator {
         this.activeController = null;
       }
     }
+  }
+
+  public removeHistoryItem(query: string): void {
+    this.history.removeQuery(query);
+    this.state = {
+      ...this.state,
+      history: this.history.getHistory(),
+    };
+    this.notify();
+  }
+
+  public clearHistory(): void {
+    this.history.clearHistory();
+    this.state = {
+      ...this.state,
+      history: [],
+    };
+    this.notify();
   }
 
   public destroy(): void {

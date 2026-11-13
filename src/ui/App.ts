@@ -42,14 +42,10 @@ export function createApp(): HTMLElement {
       void coordinator.selectFromHistory(term);
     },
     onRemove: (term) => {
-      // Access storage directly or through coordinator
-      const history = coordinator.getState().history.filter((h) => h !== term);
-      localStorage.setItem('country_search_history', JSON.stringify(history));
-      historyBar.update(history);
+      coordinator.removeHistoryItem(term);
     },
     onClearAll: () => {
-      localStorage.removeItem('country_search_history');
-      historyBar.update([]);
+      coordinator.clearHistory();
     },
   });
 

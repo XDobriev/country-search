@@ -32,15 +32,23 @@ export function createHistoryBar(props: HistoryBarProps): HistoryBarHandle {
     container.appendChild(label);
 
     for (const term of history) {
-      const chip = el('button', {
-        type: 'button',
+      const chip = el('div', {
         className: 'history-chip',
-        'aria-label': `Искать «${term}»`,
+        role: 'group',
+        'aria-label': `Элемент истории «${term}»`,
       });
 
-      const termText = el('span', {}, [term]);
-      termText.addEventListener('click', (e) => {
-        e.stopPropagation();
+      const termBtn = el(
+        'button',
+        {
+          type: 'button',
+          className: 'history-chip-btn',
+          'aria-label': `Искать «${term}»`,
+          title: `Искать «${term}»`,
+        },
+        [term]
+      );
+      termBtn.addEventListener('click', () => {
         props.onSelect(term);
       });
 
@@ -60,12 +68,8 @@ export function createHistoryBar(props: HistoryBarProps): HistoryBarHandle {
         props.onRemove(term);
       });
 
-      chip.appendChild(termText);
+      chip.appendChild(termBtn);
       chip.appendChild(removeBtn);
-      chip.addEventListener('click', () => {
-        props.onSelect(term);
-      });
-
       container.appendChild(chip);
     }
 

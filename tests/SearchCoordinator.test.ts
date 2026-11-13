@@ -144,4 +144,37 @@ describe('SearchCoordinator', () => {
     coordinator.onInput('def');
     expect(listener).toHaveBeenCalledTimes(2);
   });
+
+  it('removes history item through coordinator', () => {
+    const coordinator = new SearchCoordinator();
+    coordinator.removeHistoryItem('Spain');
+    expect(coordinator.getState().history).not.toContain('Spain');
+  });
+
+  it('clears entire history through coordinator', () => {
+    const coordinator = new SearchCoordinator();
+    coordinator.clearHistory();
+    expect(coordinator.getState().history).toEqual([]);
+  });
+
+  it('resets error state when user types new input after error', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: false,
+      status: 500,
+      statusText: 'Internal Server Error',
+      json: async () => ({ message: 'Server error' }),
+    });
+    globalThis.fetch = fetchMock;
+
+    const coordinator = new SearchCoordinator({ debounceDelay: 50 });
+    coordinator.onInput('fail');
+    await new Promise((resolve) => setTimeout(resolve, 60));
+
+    expect(coordinator.getState().status).toBe('ERROR');
+    expect(coordinator.getState().error).not.toBeNull();
+
+    coordinator.onInput('newquery');
+    expect(coordinator.getState().status).toBe('IDLE');
+    expect(coordinator.getState().error).toBeNull();
+  });
 });
