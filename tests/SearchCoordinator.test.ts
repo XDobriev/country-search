@@ -1,6 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { SearchCoordinator } from '../src/services/SearchCoordinator';
-import { HttpError } from '../src/api/HttpError';
 
 describe('SearchCoordinator', () => {
   const originalFetch = globalThis.fetch;
