@@ -1,0 +1,37 @@
+[
+  {
+    "area": 505992,
+    "cioc": "ESP",
+    "flag": "🇪🇸",
+    "name": "Spain",
+    "flags": {
+      "png": "https://flagcdn.com/w320/es.png",
+      "svg": "https://flagcdn.com/es.svg"
+    },
+    "region": "Europe",
+    "borders": ["AND", "FRA", "GIB", "PRT", "MAR"],
+    "capital": "Madrid",
+    "languages": [
+      {
+        "name": "Spanish",
+        "iso639_1": "es",
+        "nativeName": "Español"
+      }
+    ],
+    "subregion": "Southern Europe",
+    "timezones": ["UTC", "UTC+01:00"],
+    "alpha2Code": "ES",
+    "alpha3Code": "ESP",
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "nativeName": "España",
+    "population": 47351567,
+    "callingCodes": ["34"],
+    "topLevelDomain": [".es"]
+  }
+]
