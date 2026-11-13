@@ -1,16 +1,14 @@
 # Pull Request: Country Search
 
-## 🔗 Ссылки
+1. **Task**: [Country Search (RS School)](https://github.com/rolling-scopes-school/tasks/blob/master/fullstack-engineering/tasks/country-search/README.md)
+2. **Screenshot**:
 
-- **Задание**: [RS School — Country Search](https://github.com/rolling-scopes-school/tasks/blob/master/fullstack-engineering/tasks/country-search/README.md)
-- **Деплой**: [https://xdobriev.github.io/country-search/](https://xdobriev.github.io/country-search/) _(после слияния/деплоя ветки в GitHub Pages)_
-- **Архитектурная документация**: [DESIGN.md](./DESIGN.md)
+   ![Country Search screenshot](https://raw.githubusercontent.com/XDobriev/country-search/country-search/screenshot.png)
 
----
-
-## 📸 Скриншот интерфейса
-
-![Country Search Interface](https://raw.githubusercontent.com/XDobriev/country-search/country-search/screenshot.png)
+3. **Deploy**: [https://xdobriev.github.io/country-search/](https://xdobriev.github.io/country-search/)
+4. **Done**: 13.11.2026 / **Deadline**: 17.11.2026 00:59 UTC (2026-11-17 00:59)
+5. **Score**: 155 / 155
+6. **Документация**: [DESIGN.md](./DESIGN.md)
 
 ---
 
