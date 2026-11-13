@@ -10,7 +10,7 @@
 
 ## 📸 Скриншот интерфейса
 
-![Country Search Interface](./screenshot.png)
+![Country Search Interface](https://raw.githubusercontent.com/XDobriev/country-search/country-search/screenshot.png)
 
 ---
 
